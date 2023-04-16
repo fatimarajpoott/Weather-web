@@ -26,7 +26,7 @@ async function checkWeather(city){
     weather_body.style.display = "flex";
     temperature.innerHTML = `${Math.round(weather_data.main.temp - 273.15)}°C`;
     description.innerHTML = `${weather_data.weather[0].description}`;
-    
+
     humidity.innerHTML = `${weather_data.main.humidity}%`;
     wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`;
     switch(weather_data.weather[0].main){
@@ -51,3 +51,6 @@ async function checkWeather(city){
     }
     console.log(weather_data);
 }
+searchBtn.addEventListener('click', ()=>{
+    checkWeather(inputBox.value);
+});
